@@ -55,7 +55,9 @@ struct SmallVerticalButton_Previews: PreviewProvider {
             SmallVerticalButton(text: "My List",
                                 isOnImage: "checkmark",
                                 isOffImage: "plus",
-                                isOn: false, action: <#() -> Void#>)
+                                isOn: true) {
+                print("Tapped")
+            }
         }
     }
 }
