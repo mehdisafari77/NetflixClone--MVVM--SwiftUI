@@ -18,6 +18,7 @@
 		B5940D7327C08D350005787C /* GlobalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5940D7227C08D350005787C /* GlobalHelpers.swift */; };
 		B5940D7527C08EFF0005787C /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5940D7427C08EFF0005787C /* HomeVM.swift */; };
 		B5940D7727C09E110005787C /* TopMoviePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5940D7627C09E110005787C /* TopMoviePreview.swift */; };
+		B5940D7927C0A46E0005787C /* SmallVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5940D7827C0A46E0005787C /* SmallVerticalButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B5940D7227C08D350005787C /* GlobalHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalHelpers.swift; sourceTree = "<group>"; };
 		B5940D7427C08EFF0005787C /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		B5940D7627C09E110005787C /* TopMoviePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviePreview.swift; sourceTree = "<group>"; };
+		B5940D7827C0A46E0005787C /* SmallVerticalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallVerticalButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				B5940D7227C08D350005787C /* GlobalHelpers.swift */,
 				B5940D7427C08EFF0005787C /* HomeVM.swift */,
 				B5940D7627C09E110005787C /* TopMoviePreview.swift */,
+				B5940D7827C0A46E0005787C /* SmallVerticalButton.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				B5940D7727C09E110005787C /* TopMoviePreview.swift in Sources */,
 				B5940D6F27C08C9D0005787C /* Movie.swift in Sources */,
 				B586244C27C0868600FF3B97 /* NetflixClone__MVVM__SwiftUIApp.swift in Sources */,
+				B5940D7927C0A46E0005787C /* SmallVerticalButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
