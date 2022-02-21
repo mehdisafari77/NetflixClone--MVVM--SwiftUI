@@ -19,6 +19,7 @@
 		B5940D7527C08EFF0005787C /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5940D7427C08EFF0005787C /* HomeVM.swift */; };
 		B5940D7727C09E110005787C /* TopMoviePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5940D7627C09E110005787C /* TopMoviePreview.swift */; };
 		B5940D7927C0A46E0005787C /* SmallVerticalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5940D7827C0A46E0005787C /* SmallVerticalButton.swift */; };
+		B5940DAF27C328640005787C /* WhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5940DAE27C328640005787C /* WhiteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B5940D7427C08EFF0005787C /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
 		B5940D7627C09E110005787C /* TopMoviePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMoviePreview.swift; sourceTree = "<group>"; };
 		B5940D7827C0A46E0005787C /* SmallVerticalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallVerticalButton.swift; sourceTree = "<group>"; };
+		B5940DAE27C328640005787C /* WhiteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhiteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				B5940D7427C08EFF0005787C /* HomeVM.swift */,
 				B5940D7627C09E110005787C /* TopMoviePreview.swift */,
 				B5940D7827C0A46E0005787C /* SmallVerticalButton.swift */,
+				B5940DAE27C328640005787C /* WhiteButton.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				B5940D6F27C08C9D0005787C /* Movie.swift in Sources */,
 				B586244C27C0868600FF3B97 /* NetflixClone__MVVM__SwiftUIApp.swift in Sources */,
 				B5940D7927C0A46E0005787C /* SmallVerticalButton.swift in Sources */,
+				B5940DAF27C328640005787C /* WhiteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
