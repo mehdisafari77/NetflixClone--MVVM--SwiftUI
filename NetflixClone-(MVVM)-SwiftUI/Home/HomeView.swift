@@ -19,6 +19,8 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                     
+                    TopMoviePreview(movie: exampleMovie2)
+                    
                     ForEach(vm.allCategories, id: \.self) { category in
                         VStack {
                             HStack {
