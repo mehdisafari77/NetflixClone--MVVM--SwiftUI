@@ -34,8 +34,17 @@ struct MovieDetail: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
                         
-                        StandardHomeMovie(movie: movie)
-                            .frame(width: screen.width / 2.5)
+                        ZStack(alignment: .leading) {
+                            Image("netflix_logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 35)
+                                .padding(.top, -110)
+                            
+                            StandardHomeMovie(movie: movie)
+                                .frame(width: screen.width / 2.5)
+                                .zIndex(-1)
+                        }
                         
                         MovieInfoSubheadline(movie: movie)
                         
@@ -44,7 +53,12 @@ struct MovieDetail: View {
                                 .bold()
                                 .font(.headline)
                         }
-                    }
+                        
+                        PlayButton(text: "Play", imageName: "play.fill", backgroundColor: .red, action: {
+                            //
+                        })
+                        
+                    }.padding(.horizontal, 10)
                 }
 
                 Spacer()

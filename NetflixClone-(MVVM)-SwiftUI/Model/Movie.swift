@@ -35,3 +35,7 @@ struct Movie: Identifiable {
         return ""
     }
 }
+
+struct CurrentEpisodeInfo: Hashable, Equatable {
+    
+}

@@ -42,9 +42,18 @@ struct HomeView: View {
                             
                             ScrollView(.horizontal, showsIndicators: false) {
                                 LazyHStack {
-                                    ForEach(vm.getMovie(forCat: category)) { movie in StandardHomeMovie(movie: movie)
-                                            .frame(width: 100, height: 200)
+                                    ForEach(vm.getMovie(forCat: category)) { movie in ZStack(alignment: .leading) {
+                                        Image("netflix_logo")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 30)
+                                            .padding(.top, -95)
+                                        
+                                        StandardHomeMovie(movie: movie)
+                                                .frame(width: 100, height: 200)
                                             .padding(.horizontal, 20)
+                                            .zIndex(-1)
+                                    }
                                     }
                                 }
                             }
