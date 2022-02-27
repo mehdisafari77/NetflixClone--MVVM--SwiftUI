@@ -21,14 +21,29 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                     
-                    ZStack(alignment: .top) {
+                    HStack {
+                        Text("Logo")
+                        
+                        Spacer()
+                        
+                        Text("TV Shows")
+                        
+                        Spacer()
+
+                        Text("Movies")
+                        
+                        Spacer()
+
+                        Text("My List")
+                    }.background(Color.red)
+
+                    
                         TopMoviePreview(movie: exampleMovie5)
                             .frame(width: screen.width)
-                        .padding(.top, -110)
-                        
-                        Text("Logo")
-                            .background(Color.red)
-                    }
+                            .padding(.top, -110)
+                            .zIndex(-1.0)
+                    
+
                     
                     ForEach(vm.allCategories, id: \.self) { category in
                         VStack {
