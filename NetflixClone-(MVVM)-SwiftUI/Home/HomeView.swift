@@ -112,7 +112,7 @@ struct TopRowButtons: View {
             })
                 .buttonStyle(PlainButtonStyle())
         }
-        .padding(.top, -10)
+        .padding(.top, -5)
         .padding(.leading, 10)
         .padding(.trailing, 30)
     }

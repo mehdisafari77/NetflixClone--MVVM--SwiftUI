@@ -20,3 +20,4 @@ struct Episode: Identifiable {
         return URL(string: thumbnailImageURLString)!
     }
 }
+

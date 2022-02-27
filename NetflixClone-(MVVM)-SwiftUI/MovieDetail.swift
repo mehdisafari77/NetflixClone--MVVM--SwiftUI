@@ -38,6 +38,12 @@ struct MovieDetail: View {
                             .frame(width: screen.width / 2.5)
                         
                         MovieInfoSubheadline(movie: movie)
+                        
+                        if movie.promotionHeadline != nil {
+                            Text(movie.promotionHeadline!)
+                                .bold()
+                                .font(.headline)
+                        }
                     }
                 }
 
@@ -50,7 +56,7 @@ struct MovieDetail: View {
 
 struct MovieDetail_Previews: PreviewProvider {
     static var previews: some View {
-        MovieDetail(movie: exampleMovie1)
+        MovieDetail(movie: exampleMovie2)
     }
 }
 
@@ -58,19 +64,56 @@ struct MovieInfoSubheadline: View {
     var movie: Movie
     
     var body: some View {
-        HStack {
+        HStack(spacing: 20) {
             Image(systemName: "hand.thumbsup.fill")
                 .foregroundColor(.white)
             
             Text(String(movie.year))
             
+            RatingView(rating: movie.rating)
+            
 
             Text(movie.numberOfSeasonsDisplay)
             
-            Text("SEASONS")
-            
+            HDView()
+                        
         }
         .foregroundColor(.gray)
         .padding(.vertical, 6)
+    }
+}
+
+struct RatingView: View {
+    var rating: String
+    
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(.gray)
+            
+            Text(rating)
+                .foregroundColor(.white)
+                .font(.system(size: 12))
+                .bold()
+        }
+        .frame(width: 50, height: 20)
+    }
+}
+
+struct HDView: View {
+    var body: some View {
+        ZStack {
+            Rectangle()
+                .foregroundColor(.black)
+                .frame(width: 30)
+                .border(Color.gray, width: 2)
+
+                
+            Text("HD")
+                .foregroundColor(.white)
+                .font(.system(size: 13))
+                .bold()
+        }
+        .frame(width: 40, height: 20)
     }
 }
