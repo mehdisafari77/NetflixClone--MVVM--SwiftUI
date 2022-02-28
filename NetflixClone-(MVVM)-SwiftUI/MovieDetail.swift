@@ -34,17 +34,7 @@ struct MovieDetail: View {
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack {
                         
-                        ZStack(alignment: .leading) {
-                            Image("netflix_logo")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 35)
-                                .padding(.top, -110)
-                            
-                            StandardHomeMovie(movie: movie)
-                                .frame(width: screen.width / 2.5)
-                                .zIndex(-1)
-                        }
+                        StandardHomeMovieInfo(movie: movie)
                         
                         MovieInfoSubheadline(movie: movie)
                         
@@ -58,21 +48,9 @@ struct MovieDetail: View {
                             //
                         }
                         
-                        // Current Episode Information
-                        HStack {
-                            Text(movie.episodeInfoDisplay)
-                                .bold()
-                            
-                            Spacer()
-                        }
-                        .padding(.vertical, 4)
+                        CurrentEpisodeInformation(movie: movie)
                         
-                        HStack {
-                            Text(movie.episodeDescriptionDisplay)
-                                .font(.subheadline)
-                            
-                            Spacer()
-                        }
+                        CastInfo(movie: movie)
 
                         
                     }.padding(.horizontal, 10)
@@ -146,5 +124,69 @@ struct HDView: View {
                 .bold()
         }
         .frame(width: 40, height: 20)
+    }
+}
+
+struct CastInfo: View {
+    
+    var movie: Movie
+    
+    var body: some View {
+        VStack(spacing: 3) {
+            HStack {
+                Text("Cast: \(movie.cast)")
+                
+                Spacer()
+            }
+            
+            HStack {
+                Text("Creators: \(movie.creators)")
+                
+                Spacer()
+            }
+        }
+        .font(.caption)
+        .foregroundColor(.gray)
+        .padding(.vertical, 10)
+    }
+}
+
+struct CurrentEpisodeInformation: View {
+    var movie: Movie
+    var body: some View {
+        Group {
+            HStack {
+                Text(movie.episodeInfoDisplay)
+                    .bold()
+                
+                Spacer()
+            }
+            .padding(.vertical, 4)
+            
+            HStack {
+                Text(movie.episodeDescriptionDisplay)
+                    .font(.subheadline)
+                
+                Spacer()
+            }
+        }
+    }
+}
+
+struct StandardHomeMovieInfo: View {
+    let screen = UIScreen.main.bounds
+    var movie: Movie
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Image("netflix_logo")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 30)
+                .padding(.top, -123)
+            
+            StandardHomeMovie(movie: movie)
+                .frame(width: screen.width / 2.5)
+                .zIndex(-1)
+        }
     }
 }
