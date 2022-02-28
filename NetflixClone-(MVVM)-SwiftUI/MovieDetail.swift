@@ -61,16 +61,28 @@ struct MovieDetail: View {
                                 //
                             }
                             
-                            SmallVerticalButton(text: "Share", isOnImage: "square.and.arrow.up", isOffImage: "square.and.arrow.up", isOn: true) {
+                            SmallVerticalButton(text: "Share", isOnImage: "paperplane", isOffImage: "paperplane", isOn: true) {
                                 //
                             }
                             
                             Spacer()
                         }
                         .padding(.leading, 20)
+                        .padding(.vertical, 5)
+                        
+                        VStack {
+                            // Custom Tab Picker
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                Text("TEST")
+                            }
+                            
+                            // Selected View
+                            Text("SELECTED VIEW")
+                        }
 
                         
-                    }.padding(.horizontal, 10)
+                    }
+                    .padding(.horizontal, 10)
                 }
 
                 Spacer()
@@ -84,6 +96,12 @@ struct MovieDetail_Previews: PreviewProvider {
     static var previews: some View {
         MovieDetail(movie: exampleMovie2)
     }
+}
+
+enum CustomTab: String {
+    case episodes = "EPISODES"
+    case trailers = "TRAILERS & MORE"
+    case more = "MORE LIKE THIS"
 }
 
 struct MovieInfoSubheadline: View {
