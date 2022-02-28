@@ -70,17 +70,6 @@ struct MovieDetail: View {
                         .padding(.leading, 20)
                         .padding(.vertical, 5)
                         
-                        VStack {
-                            // Custom Tab Picker
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                Text("TEST")
-                            }
-                            
-                            // Selected View
-                            Text("SELECTED VIEW")
-                        }
-
-                        
                     }
                     .padding(.horizontal, 10)
                 }
