@@ -39,6 +39,22 @@ struct Movie: Identifiable {
         
         return ""
     }
+    
+    var episodeInfoDisplay: String {
+        if let current = currentEpisode {
+            return "S\(current.season):E\(current.episode) \(current.episodeName)"
+        } else {
+            return "S\(defaultEpisodeInfo.season):E\(defaultEpisodeInfo.episode) \(defaultEpisodeInfo.episodeName)"
+        }
+    }
+    
+    var episodeDescriptionDisplay: String {
+        if let current = currentEpisode {
+            return current.description
+        } else {
+            return defaultEpisodeInfo.description
+        }
+    }
 }
 
 struct CurrentEpisodeInfo: Hashable, Equatable {

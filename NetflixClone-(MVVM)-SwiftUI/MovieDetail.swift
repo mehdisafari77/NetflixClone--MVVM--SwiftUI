@@ -54,9 +54,13 @@ struct MovieDetail: View {
                                 .font(.headline)
                         }
                         
-                        PlayButton(text: "Play", imageName: "play.fill", backgroundColor: .red, action: {
+                        PlayButton(text: "Play", imageName: "play.fill", backgroundColor: .red) {
                             //
-                        })
+                        }
+                        
+                        // Current Episode Information
+                        // 1. Default
+                        // 2. Personalized - where the user currently is
                         
                     }.padding(.horizontal, 10)
                 }
