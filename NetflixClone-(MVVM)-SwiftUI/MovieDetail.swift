@@ -87,12 +87,6 @@ struct MovieDetail_Previews: PreviewProvider {
     }
 }
 
-enum CustomTab: String {
-    case episodes = "EPISODES"
-    case trailers = "TRAILERS & MORE"
-    case more = "MORE LIKE THIS"
-}
-
 struct MovieInfoSubheadline: View {
     var movie: Movie
     
