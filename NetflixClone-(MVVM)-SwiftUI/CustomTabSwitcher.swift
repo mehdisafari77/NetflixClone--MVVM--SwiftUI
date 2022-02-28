@@ -12,7 +12,8 @@ struct CustomTabSwitcher: View {
     var tabs: [CustomTab]
     
     func widthForTab(_ tab: CustomTab) -> CGFloat {
-        return 100
+        let string = tab.rawValue
+        return string.widthOfString(usingFont: .systemFont(ofSize: 16, weight: .bold))
     }
     
     var body: some View {
