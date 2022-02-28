@@ -59,8 +59,21 @@ struct MovieDetail: View {
                         }
                         
                         // Current Episode Information
-                        // 1. Default
-                        // 2. Personalized - where the user currently is
+                        HStack {
+                            Text(movie.episodeInfoDisplay)
+                                .bold()
+                            
+                            Spacer()
+                        }
+                        .padding(.vertical, 4)
+                        
+                        HStack {
+                            Text(movie.episodeDescriptionDisplay)
+                                .font(.subheadline)
+                            
+                            Spacer()
+                        }
+
                         
                     }.padding(.horizontal, 10)
                 }
