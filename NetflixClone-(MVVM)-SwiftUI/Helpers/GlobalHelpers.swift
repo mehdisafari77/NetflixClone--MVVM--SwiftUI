@@ -18,7 +18,8 @@ let exampleMovie1 = Movie(
     numberOfSeasons: 1,
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran Bo Odan, Jantje Friese",
-    cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel")
+    cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
+    moreLikeThisMovies: [exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6, exampleMovie7])
 
 let exampleMovie2 = Movie(
     id: UUID().uuidString,
@@ -31,6 +32,7 @@ let exampleMovie2 = Movie(
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
+    moreLikeThisMovies: exampleMovies,
     promotionHeadline: "Best Rated Show")
 
 let exampleMovie3 = Movie(
@@ -43,7 +45,8 @@ let exampleMovie3 = Movie(
     numberOfSeasons: 3,
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran Bo Odan, Jantje Friese",
-    cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel")
+    cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
+    moreLikeThisMovies: exampleMovies)
 
 let exampleMovie4 = Movie(
     id: UUID().uuidString,
@@ -56,6 +59,7 @@ let exampleMovie4 = Movie(
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
+    moreLikeThisMovies: exampleMovies,
     promotionHeadline: "New Episodes Coming Soon")
 
 let exampleMovie5 = Movie(
@@ -68,7 +72,8 @@ let exampleMovie5 = Movie(
     numberOfSeasons: 2,
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran Bo Odan, Jantje Friese",
-    cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel")
+    cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
+    moreLikeThisMovies: exampleMovies)
 
 let exampleMovie6 = Movie(
     id: UUID().uuidString,
@@ -81,10 +86,27 @@ let exampleMovie6 = Movie(
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
+    moreLikeThisMovies: exampleMovies,
+    promotionHeadline: "Watch Season 4 Now")
+
+let exampleMovie7 = Movie(
+    id: UUID().uuidString,
+    name: "Community",
+    thumbnailURL: URL(string:"https://picsum.photos/200/304")!,
+    categories: ["Dystopian", "Exciting", "Suspenseful", "Sci-Fi TV"],
+    year: 2020,
+    rating: "TV-MA",
+    numberOfSeasons: 4,
+    defaultEpisodeInfo: exampleEpisodeInfo1,
+    creators: "Baran Bo Odan, Jantje Friese",
+    cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
+    moreLikeThisMovies: exampleMovies,
     promotionHeadline: "Watch Season 4 Now")
 
 
-let exampleMovies: [Movie] = [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6]
+var exampleMovies: [Movie] {
+    return [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6, ].shuffled()
+}
 
 let exampleEpisodeInfo1 = CurrentEpisodeInfo(episodeName: "Beginnings and Endings", description: "Six months after the disappearances, the police from a task force. In 2052, Jonas learns that most of Winden perished in an apocalyptic event", season: 2, episode: 1)
 
