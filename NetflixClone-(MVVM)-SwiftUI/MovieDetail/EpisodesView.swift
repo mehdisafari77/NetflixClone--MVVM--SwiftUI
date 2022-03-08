@@ -18,7 +18,7 @@ struct EpisodesView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 14) {
             // Season Picker
             HStack {
                 Button(action: {
@@ -42,14 +42,18 @@ struct EpisodesView: View {
                     HStack {
                         VideoPreviewImage(imageURL: episode.thumbnailURL, vieoURL: episode.videoURL)
                             .frame(width: 120, height: 70)
-                        VStack {
+                        VStack(alignment: .leading) {
                             Text("\(episode.episodeNumber). \(episode.name)")
                                 .font(.system(size: 16))
                             Text("\(episode.length)m")
                                 .font(.system(size: 12))
                                 .foregroundColor(.gray)
                         }
-                        Text("dl btn")
+                        
+                        Spacer()
+                        
+                        Image(systemName: "arrow.down.to.line.alt")
+                            .font(.system(size: 20))
                     }
                     
                     // Description
@@ -57,11 +61,13 @@ struct EpisodesView: View {
                         .font(.system(size: 13))
                         .lineLimit(3)
                 }
+                .padding(.bottom, 20)
             }
             
             Spacer()
         }
         .foregroundColor(.white)
+        .padding(.horizontal, 20)
     }
 }
 
