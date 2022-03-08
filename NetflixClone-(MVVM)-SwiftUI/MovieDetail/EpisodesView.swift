@@ -37,7 +37,26 @@ struct EpisodesView: View {
             // Episodes List
             
             ForEach(getEpisodes(forSeason: selectedSeason)) { episode in
-                Text("Test")
+                VStack(alignment: .leading) {
+                    // HStack Preview Image
+                    HStack {
+                        VideoPreviewImage(imageURL: episode.thumbnailURL, vieoURL: episode.videoURL)
+                            .frame(width: 120, height: 70)
+                        VStack {
+                            Text("\(episode.episodeNumber). \(episode.name)")
+                                .font(.system(size: 16))
+                            Text("\(episode.length)m")
+                                .font(.system(size: 12))
+                                .foregroundColor(.gray)
+                        }
+                        Text("dl btn")
+                    }
+                    
+                    // Description
+                    Text(episode.description)
+                        .font(.system(size: 13))
+                        .lineLimit(3)
+                }
             }
             
             Spacer()
