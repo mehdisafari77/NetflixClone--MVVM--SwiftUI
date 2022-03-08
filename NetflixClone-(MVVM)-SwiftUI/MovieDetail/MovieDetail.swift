@@ -21,65 +21,74 @@ struct MovieDetail: View {
             Color.black
                 .edgesIgnoringSafeArea(.all)
             
-            VStack {
-                HStack {
-                    Spacer()
-                    
-                    Button(action: {
-                        //
-                    }, label: {
-                        Image(systemName: "xmark.circle")
-                            .font(.system(size: 28))
+            ZStack {
+                VStack {
+                    HStack {
+                        Spacer()
                         
-                    })
-                }.padding(.horizontal, 22)
-                
-                ScrollView(.vertical, showsIndicators: false) {
-                    VStack {
-                        
-                        StandardHomeMovieInfo(movie: movie)
-                        
-                        MovieInfoSubheadline(movie: movie)
-                        
-                        if movie.promotionHeadline != nil {
-                            Text(movie.promotionHeadline!)
-                                .bold()
-                                .font(.headline)
-                        }
-                        
-                        PlayButton(text: "Play", imageName: "play.fill", backgroundColor: .red) {
+                        Button(action: {
                             //
+                        }, label: {
+                            Image(systemName: "xmark.circle")
+                                .font(.system(size: 28))
+                            
+                        })
+                    }.padding(.horizontal, 22)
+                    
+                    ScrollView(.vertical, showsIndicators: false) {
+                        VStack {
+                            
+                            StandardHomeMovieInfo(movie: movie)
+                            
+                            MovieInfoSubheadline(movie: movie)
+                            
+                            if movie.promotionHeadline != nil {
+                                Text(movie.promotionHeadline!)
+                                    .bold()
+                                    .font(.headline)
+                            }
+                            
+                            PlayButton(text: "Play", imageName: "play.fill", backgroundColor: .red) {
+                                //
+                            }
+                            
+                            CurrentEpisodeInformation(movie: movie)
+                            
+                            CastInfo(movie: movie)
+                            
+                            HStack(spacing: 60) {
+                                SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true) {
+                                    //
+                                }
+                                
+                                SmallVerticalButton(text: "Rate", isOnImage: "hand.thumbsup.fill", isOffImage: "hand.thumbsup", isOn: true) {
+                                    //
+                                }
+                                
+                                SmallVerticalButton(text: "Share", isOnImage: "paperplane", isOffImage: "paperplane", isOn: true) {
+                                    //
+                                }
+                                
+                                Spacer()
+                            }
+                            .padding(.leading, 20)
+                            .padding(.vertical, 5)
+                            
                         }
-                        
-                        CurrentEpisodeInformation(movie: movie)
-                        
-                        CastInfo(movie: movie)
-                        
-                        HStack(spacing: 60) {
-                            SmallVerticalButton(text: "My List", isOnImage: "checkmark", isOffImage: "plus", isOn: true) {
-                                //
-                            }
-                            
-                            SmallVerticalButton(text: "Rate", isOnImage: "hand.thumbsup.fill", isOffImage: "hand.thumbsup", isOn: true) {
-                                //
-                            }
-                            
-                            SmallVerticalButton(text: "Share", isOnImage: "paperplane", isOffImage: "paperplane", isOn: true) {
-                                //
-                            }
-                            
-                            Spacer()
-                        }
-                        .padding(.leading, 20)
-                        .padding(.vertical, 5)
-                        
+                        .padding(.horizontal, 10)
                     }
-                    .padding(.horizontal, 10)
-                }
 
-                Spacer()
+                    Spacer()
+                }
+                .foregroundColor(.white)
+                
+                if showSeasonPicker {
+                    Color.black.opacity(0.9)
+                    
+                    Text("Testing")
+                        .background(Color.red)
+                }
             }
-            .foregroundColor(.white)
         }
     }
 }
