@@ -36,7 +36,8 @@ let exampleMovie1 = Movie(
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
-    moreLikeThisMovies: [exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6, exampleMovie7])
+    moreLikeThisMovies: [exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6, exampleMovie7],
+    trailers: exampleTrailers)
 
 let exampleMovie2 = Movie(
     id: UUID().uuidString,
@@ -50,7 +51,8 @@ let exampleMovie2 = Movie(
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: exampleMovies,
-    promotionHeadline: "Best Rated Show")
+    promotionHeadline: "Best Rated Show",
+    trailers: exampleTrailers)
 
 let exampleMovie3 = Movie(
     id: UUID().uuidString,
@@ -63,7 +65,8 @@ let exampleMovie3 = Movie(
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
-    moreLikeThisMovies: exampleMovies)
+    moreLikeThisMovies: exampleMovies,
+    trailers: exampleTrailers)
 
 let exampleMovie4 = Movie(
     id: UUID().uuidString,
@@ -77,7 +80,8 @@ let exampleMovie4 = Movie(
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: exampleMovies,
-    promotionHeadline: "New Episodes Coming Soon")
+    promotionHeadline: "New Episodes Coming Soon",
+    trailers: exampleTrailers)
 
 let exampleMovie5 = Movie(
     id: UUID().uuidString,
@@ -90,7 +94,8 @@ let exampleMovie5 = Movie(
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
-    moreLikeThisMovies: exampleMovies)
+    moreLikeThisMovies: exampleMovies,
+    trailers: exampleTrailers)
 
 let exampleMovie6 = Movie(
     id: UUID().uuidString,
@@ -104,7 +109,8 @@ let exampleMovie6 = Movie(
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: exampleMovies,
-    promotionHeadline: "Watch Season 4 Now")
+    promotionHeadline: "Watch Season 4 Now",
+    trailers: exampleTrailers)
 
 let exampleMovie7 = Movie(
     id: UUID().uuidString,
@@ -118,7 +124,8 @@ let exampleMovie7 = Movie(
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: exampleMovies,
-    promotionHeadline: "Watch Season 4 Now")
+    promotionHeadline: "Watch Season 4 Now",
+    trailers: exampleTrailers)
 
 
 var exampleMovies: [Movie] {

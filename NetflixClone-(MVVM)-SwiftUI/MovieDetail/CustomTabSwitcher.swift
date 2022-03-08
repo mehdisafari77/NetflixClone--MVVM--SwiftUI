@@ -55,7 +55,7 @@ struct CustomTabSwitcher: View {
                     //
                 }
             case .trailers:
-                Text("trailers")
+                TrailerList(trailers: movie.trailers)
             case .more:
                 MoreLikeThis(movies: movie.moreLikeThisMovies)
             }
