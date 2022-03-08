@@ -17,6 +17,9 @@ struct HomeView: View {
     @State private var topRowSelection: HomeTopRow = .home
     @State private var homeGenre: HomeGenre = .AllGenres
     
+    @State private var showGenreSelection = false
+    @State private var showTopRowSelection = false
+
     var body: some View {
         ZStack {
             Color.black
@@ -26,7 +29,7 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                     
-                    TopRowButtons(topRowSelection: $topRowSelection, homeGenre: $homeGenre)
+                    TopRowButtons(topRowSelection: $topRowSelection, homeGenre: $homeGenre, showGenreSelection: $showGenreSelection, showTopRowSelection: $showTopRowSelection)
                     
                     TopMoviePreview(movie: exampleMovie5)
                         .frame(width: screen.width)
@@ -90,7 +93,9 @@ struct TopRowButtons: View {
     @Binding var topRowSelection: HomeTopRow
     @Binding var homeGenre: HomeGenre
     
-    
+    @Binding var showGenreSelection: Bool
+    @Binding var showTopRowSelection: Bool
+
     var body: some View {
         switch topRowSelection {
         case .home:
@@ -151,7 +156,7 @@ struct TopRowButtons: View {
                 
                 HStack(spacing: 20) {
                     Button(action: {
-                        //
+                        showTopRowSelection = true
                     }, label: {
                         HStack {
                             Text(topRowSelection.rawValue)
@@ -164,11 +169,11 @@ struct TopRowButtons: View {
                         .buttonStyle(PlainButtonStyle())
                     
                     Button(action: {
-                        //
+                        showGenreSelection = true
                     }, label: {
                         HStack {
-                            Text("All Genres")
-                                .font(.system(size: 12))
+                            Text(homeGenre.rawValue)
+                                .font(.system(size: 13))
                             Image(systemName: "triangle.fill")
                                 .rotationEffect(.degrees(180), anchor: .center)
                                 .font(.system(size: 6))
@@ -193,7 +198,7 @@ enum HomeTopRow: String, CaseIterable {
     case myList = "My List"
 }
 
-enum HomeGenre {
+enum HomeGenre: String {
     case AllGenres
     case Action
     case Comdey
