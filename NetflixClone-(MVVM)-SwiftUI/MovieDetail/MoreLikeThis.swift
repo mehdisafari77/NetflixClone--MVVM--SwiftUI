@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MoreLikeThis: View {
-
+    
     var movies: [Movie]
     
     let columns = [
@@ -19,24 +19,22 @@ struct MoreLikeThis: View {
     
     var body: some View {
         let screen = UIScreen.main.bounds
-        ScrollView {
-            LazyVGrid(columns: columns) {
-                ForEach(0..<movies.count) { index in
+        LazyVGrid(columns: columns) {
+            ForEach(0..<movies.count) { index in
+                
+                // ZStack for mini Netflix Logo
+                ZStack(alignment: .leading) {
+                    Image("netflix_logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 30)
+                        .padding(.top, -110)
+                        .padding(.leading, 5)
                     
-                    // ZStack for mini Netflix Logo
-                    ZStack(alignment: .leading) {
-                        Image("netflix_logo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 30)
-                            .padding(.top, -110)
-                            .padding(.leading, 5)
-
-                        
-                        StandardHomeMovie(movie: movies[index])
-                            .frame(width: screen.width / 2.5)
-                            .zIndex(-1)
-                    }
+                    
+                    StandardHomeMovie(movie: movies[index])
+                        .frame(width: screen.width / 2.5)
+                        .zIndex(-1)
                 }
             }
         }

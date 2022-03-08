@@ -12,6 +12,8 @@ struct HomeView: View {
     
     let screen = UIScreen.main.bounds
     
+    @State private var movieDetailToShow: Movie? = nil
+    
     var body: some View {
         ZStack {
             Color.black
@@ -22,14 +24,14 @@ struct HomeView: View {
                 LazyVStack {
                     
                     TopRowButtons()
-
-
-                        TopMoviePreview(movie: exampleMovie2)
-                            .frame(width: screen.width)
-                            .padding(.top, -110)
-                            .zIndex(-1.0)
                     
-
+                    
+                    TopMoviePreview(movie: exampleMovie2)
+                        .frame(width: screen.width)
+                        .padding(.top, -110)
+                        .zIndex(-1.0)
+                    
+                    
                     
                     ForEach(vm.allCategories, id: \.self) { category in
                         VStack {
@@ -50,7 +52,7 @@ struct HomeView: View {
                                             .padding(.top, -95)
                                         
                                         StandardHomeMovie(movie: movie)
-                                                .frame(width: 100, height: 200)
+                                            .frame(width: 100, height: 200)
                                             .padding(.horizontal, 20)
                                             .zIndex(-1)
                                     }
