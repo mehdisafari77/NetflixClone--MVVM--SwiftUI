@@ -22,6 +22,7 @@ struct MoreLikeThis: View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(0..<movies.count) { index in
+                    // ZStack for mini Netflix Logo
                     ZStack(alignment: .leading) {
                         Image("netflix_logo")
                             .resizable()
