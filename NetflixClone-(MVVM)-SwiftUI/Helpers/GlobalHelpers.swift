@@ -12,7 +12,7 @@ let exampleVideoURL = URL(string: "https://www.radiantmediaplayer.com/media/big-
 
 let exampleImageURL = URL(string: "https://picsum.photos/300/104")!
 let exampleImageURL2 = URL(string: "https://picsum.photos/300/105")!
-let exampleImageURL3 = URL(string: "https://picsum.photos/300/105")!
+let exampleImageURL3 = URL(string: "https://picsum.photos/300/106")!
 
 var randomExampleImageURL: URL {
     return [exampleImageURL, exampleImageURL2, exampleImageURL3].randomElement() ?? exampleImageURL
@@ -23,6 +23,28 @@ let exampleTrailer2 = Trailer(name: "The Hero's Journey", videoURL: exampleVideo
 let exampleTrailer3 = Trailer(name: "The Mysterious", videoURL: exampleVideoURL, thumbnailImageURL: exampleImageURL3)
 
 let exampleTrailers = [exampleTrailer1, exampleTrailer2, exampleTrailer3]
+
+let episode1 = Episode(name: "Beginning and Endings",
+                        season: 1,
+                        episodeNumber: 1,
+                        thumbnailImageURLString: "https://picsum.photos/300/102",
+                        description: "Six months after the disappearances, the police form a task force. In 2052, Jonas learns that most of Winden perished in an apocalyptic event.",
+                        length: 54,
+                        videoURL: exampleVideoURL)
+let episode2 = Episode(name: "Dark Matter",
+                        season: 1,
+                        episodeNumber: 2,
+                        thumbnailImageURLString: "https://picsum.photos/300/110",
+                        description: "Clausen and Charlotte interview Regina. The Stranger takes Hannah to 1987, where Claudia has an unnerving encounter and Egon visits an old nemesis",
+                        length: 54,
+                        videoURL: exampleVideoURL)
+let episode3 = Episode(name: "Ghosts",
+                        season: 1,
+                        episodeNumber: 3,
+                        thumbnailImageURLString: "https://picsum.photos/300/111",
+                        description: "In 1954, a missingHelge returns, but he'll only speak to Noah. In 1987, Claudia brings the time machine to Tanhaus, and Egon questions Ulrich again",
+                        length: 56,
+                        videoURL: exampleVideoURL)
 
 
 let exampleMovie1 = Movie(
