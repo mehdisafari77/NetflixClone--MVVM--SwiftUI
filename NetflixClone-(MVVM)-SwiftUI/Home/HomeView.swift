@@ -92,54 +92,104 @@ struct TopRowButtons: View {
     
     
     var body: some View {
-        HStack {
-            Button(action: {
-                //
-            }, label: {
-                Image("netflix_logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50)
-            })
-                .buttonStyle(PlainButtonStyle())
+        switch topRowSelection {
+        case .home:
+            HStack {
+                Button(action: {
+                    topRowSelection = .home
+                }, label: {
+                    Image("netflix_logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50)
+                })
+                    .buttonStyle(PlainButtonStyle())
+                
+                
+                Spacer()
+                
+                Button(action: {
+                    topRowSelection = .tvShows
+                }, label: {
+                    Text("TV Shows")
+                })
+                    .buttonStyle(PlainButtonStyle())
+                
+                
+                Spacer()
+                
+                Button(action: {
+                    topRowSelection = .movies
+                }, label: {
+                    Text("Movies")
+                })
+                    .buttonStyle(PlainButtonStyle())
+                
+                Spacer()
+                
+                Button(action: {
+                    topRowSelection = .myList
+                }, label: {
+                    Text("My List")
+                })
+                    .buttonStyle(PlainButtonStyle())
+            }
+            .padding(.leading, 10)
+            .padding(.trailing, 30)
             
-            
-            Spacer()
-            
-            Button(action: {
-                //
-            }, label: {
-                Text("TV Shows")
-            })
-                .buttonStyle(PlainButtonStyle())
-            
-            
-            Spacer()
-            
-            Button(action: {
-                //
-            }, label: {
-                Text("Movies")
-            })
-                .buttonStyle(PlainButtonStyle())
-            
-            Spacer()
-            
-            Button(action: {
-                //
-            }, label: {
-                Text("My List")
-            })
-                .buttonStyle(PlainButtonStyle())
+        case .tvShows, .myList, .movies:
+            HStack {
+                Button(action: {
+                    topRowSelection = .home
+                }, label: {
+                    Image("netflix_logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50)
+                })
+                    .buttonStyle(PlainButtonStyle())
+                
+                HStack(spacing: 20) {
+                    Button(action: {
+                        //
+                    }, label: {
+                        HStack {
+                            Text(topRowSelection.rawValue)
+                                .font(.system(size: 18))
+                            Image(systemName: "triangle.fill")
+                                .rotationEffect(.degrees(180), anchor: .center)
+                                .font(.system(size: 10))
+                        }
+                    })
+                        .buttonStyle(PlainButtonStyle())
+                    
+                    Button(action: {
+                        //
+                    }, label: {
+                        HStack {
+                            Text("All Genres")
+                                .font(.system(size: 12))
+                            Image(systemName: "triangle.fill")
+                                .rotationEffect(.degrees(180), anchor: .center)
+                                .font(.system(size: 6))
+                        }
+                    })
+                        .buttonStyle(PlainButtonStyle())
+                    Spacer()
+                }
+                .padding(.leading, 10)
+            }
+            .padding(.leading, 10)
+            .padding(.trailing, 30)
         }
-        .padding(.leading, 10)
-        .padding(.trailing, 30)
+        
     }
 }
 
 enum HomeTopRow: String, CaseIterable {
     case home = "Home"
     case tvShows = "TV Shows"
+    case movies = "Movies"
     case myList = "My List"
 }
 
