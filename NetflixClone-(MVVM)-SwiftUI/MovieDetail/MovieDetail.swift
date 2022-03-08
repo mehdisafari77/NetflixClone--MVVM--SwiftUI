@@ -74,6 +74,8 @@ struct MovieDetail: View {
                             .padding(.leading, 20)
                             .padding(.vertical, 5)
                             
+                            CustomTabSwitcher(tabs: [.episodes, .trailers, .more], movie: movie, showSeasonPicker: $showSeasonPicker, selectedSeason: $selectedSeason)
+                            
                         }
                         .padding(.horizontal, 10)
                     }
@@ -83,10 +85,39 @@ struct MovieDetail: View {
                 .foregroundColor(.white)
                 
                 if showSeasonPicker {
-                    Color.black.opacity(0.9)
-                    
-                    Text("Testing")
-                        .background(Color.red)
+                    Group {
+                        Color.black.opacity(0.9)
+                        
+                        VStack(spacing: 40) {
+                            Spacer()
+                            
+                            ForEach(0..<(movie.numberOfSeasons ?? 0)) { season in
+                                Button {
+                                    self.selectedSeason = season + 1
+                                    self.showSeasonPicker = false
+                                } label: {
+                                    Text("Season \(season)")
+                                        .foregroundColor(selectedSeason == season + 1 ? .white : .gray)
+                                        .bold()
+                                        .font(selectedSeason == season + 1 ? .title : .title2)
+                                }
+
+                            }
+                            
+                            Spacer()
+                            
+                            Button {
+                                self.showSeasonPicker = false
+                            } label: {
+                                Image(systemName: "x.circle.fill")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 40))
+                                    .scaleEffect(x: 1.1)
+                            }
+                            .padding(.bottom, 30)
+                        }
+                    }
+                    .edgesIgnoringSafeArea(.all)
                 }
             }
         }

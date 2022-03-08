@@ -83,6 +83,7 @@ let exampleMovie1 = Movie(
     creators: "Baran Bo Odan, Jantje Friese",
     cast: "Louis Hoffman, Oliver Masucci, Jordis Triebel",
     moreLikeThisMovies: [exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6, exampleMovie7],
+    episodes: allExampleEpisodes,
     trailers: exampleTrailers)
 
 let exampleMovie2 = Movie(
