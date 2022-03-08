@@ -51,7 +51,7 @@ struct EpisodesView_Previews: PreviewProvider {
         ZStack {
             Color.black
                 .edgesIgnoringSafeArea(.all)
-            EpisodesView(episodes: [allExampleEpisodes], showSeasonPicker: .constant(false), selectedSeason: .constant(1))
+            EpisodesView(episodes: allExampleEpisodes, showSeasonPicker: .constant(false), selectedSeason: .constant(1))
         }
     }
 }
