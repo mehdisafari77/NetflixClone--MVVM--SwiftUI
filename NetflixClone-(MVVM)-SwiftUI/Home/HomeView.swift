@@ -14,6 +14,9 @@ struct HomeView: View {
     
     @State private var movieDetailToShow: Movie? = nil
     
+    @State private var topRowSelection: HomeTopRow = .home
+    @State private var homeGenre: HomeGenre = .AllGenres
+    
     var body: some View {
         ZStack {
             Color.black
@@ -23,7 +26,7 @@ struct HomeView: View {
             ScrollView(showsIndicators: false) {
                 LazyVStack {
                     
-                    TopRowButtons()
+                    TopRowButtons(topRowSelection: $topRowSelection, homeGenre: $homeGenre)
                     
                     TopMoviePreview(movie: exampleMovie5)
                         .frame(width: screen.width)
@@ -84,6 +87,9 @@ struct HomeView_Previews: PreviewProvider {
 
 struct TopRowButtons: View {
     
+    @Binding var topRowSelection: HomeTopRow
+    @Binding var homeGenre: HomeGenre
+    
     
     var body: some View {
         HStack {
@@ -129,4 +135,18 @@ struct TopRowButtons: View {
         .padding(.leading, 10)
         .padding(.trailing, 30)
     }
+}
+
+enum HomeTopRow: String, CaseIterable {
+    case home = "Home"
+    case tvShows = "TV Shows"
+    case myList = "My List"
+}
+
+enum HomeGenre {
+    case AllGenres
+    case Action
+    case Comdey
+    case Horror
+    case Thriller
 }
