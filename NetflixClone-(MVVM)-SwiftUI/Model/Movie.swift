@@ -22,6 +22,7 @@ struct Movie: Identifiable {
     // Personalization
     var currentEpisode: CurrentEpisodeInfo?
     
+    
     var defaultEpisodeInfo: CurrentEpisodeInfo
     var creators: String
     var cast: String
@@ -38,7 +39,7 @@ struct Movie: Identifiable {
         if let num = numberOfSeasons {
             if num == 1 {
                 return "1 season"
-            }else {
+            } else {
                 return "\(num) seasons"
             }
         }
@@ -61,6 +62,7 @@ struct Movie: Identifiable {
             return defaultEpisodeInfo.description
         }
     }
+    
 }
 
 struct CurrentEpisodeInfo: Hashable, Equatable {

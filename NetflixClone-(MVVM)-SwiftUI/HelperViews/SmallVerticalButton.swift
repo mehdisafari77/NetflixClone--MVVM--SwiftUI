@@ -59,5 +59,6 @@ struct SmallVerticalButton_Previews: PreviewProvider {
                 print("Tapped")
             }
         }
+        
     }
 }

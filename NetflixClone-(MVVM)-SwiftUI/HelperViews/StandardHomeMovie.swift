@@ -9,7 +9,6 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct StandardHomeMovie: View {
-    
     var movie: Movie
     
     var body: some View {
@@ -24,3 +23,4 @@ struct StandardHomeMovie_Previews: PreviewProvider {
         StandardHomeMovie(movie: exampleMovie1)
     }
 }
+

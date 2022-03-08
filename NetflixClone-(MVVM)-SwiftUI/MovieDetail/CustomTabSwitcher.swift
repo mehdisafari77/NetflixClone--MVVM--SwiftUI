@@ -80,7 +80,7 @@ struct CustomTabSwitcher_Previews: PreviewProvider {
             Color.black
                 .edgesIgnoringSafeArea(.all)
             
-            CustomTabSwitcher(tabs: [.episodes, .trailers, .more], movie: exampleMovie1, showSeasonPicker: .constant(false), selectedSeason: .constant(1))
+            CustomTabSwitcher(tabs: [.episodes, .trailers, .more], movie: exampleMovie2, showSeasonPicker: .constant(false), selectedSeason: .constant(1))
         }
     }
 }

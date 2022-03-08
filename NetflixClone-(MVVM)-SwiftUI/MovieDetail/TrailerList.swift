@@ -17,7 +17,7 @@ struct TrailerList: View {
             ForEach(trailers) { trailer in
                 
                 VStack(alignment: .leading) {
-                    VideoPreviewImage(imageURL: trailer.thumbnailImageURL, vieoURL: trailer.videoURL)
+                    VideoPreviewImage(imageURL: trailer.thumbnailImageURL, videoURL: trailer.videoURL)
                         .frame(maxWidth: screen.width)
                     
                     Text(trailer.name)

@@ -13,7 +13,7 @@ struct PlayButton: View {
     var imageName: String
     var backgroundColor: Color = Color.white
     
-
+    
     var action: () -> Void
     
     var body: some View {
@@ -45,7 +45,7 @@ struct WhiteButton_Previews: PreviewProvider {
                 .edgesIgnoringSafeArea(.all)
             
             PlayButton(text: "Play", imageName: "play.fill") {
-                //
+                print("Tapped")
             }
         }
     }

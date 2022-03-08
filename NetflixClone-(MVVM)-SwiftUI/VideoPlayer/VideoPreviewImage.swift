@@ -9,13 +9,13 @@ import SwiftUI
 import KingfisherSwiftUI
 
 struct VideoPreviewImage: View {
-    
     var imageURL: URL
-    var vieoURL: URL
+    var videoURL: URL
     
     @State private var showingVideoPlayer = false
     
     var body: some View {
+        
         ZStack {
             KFImage(imageURL)
                 .resizable()
@@ -28,15 +28,17 @@ struct VideoPreviewImage: View {
                     .foregroundColor(.white)
                     .font(.system(size: 40))
             })
-                .sheet(isPresented: $showingVideoPlayer) {
-                    SwiftUIVideoView(url: vieoURL)
-                }
+            .sheet(isPresented: $showingVideoPlayer, content: {
+                SwiftUIVideoView(url: videoURL)
+            })
         }
+        
+        
     }
 }
 
 struct VideoPreviewImage_Previews: PreviewProvider {
     static var previews: some View {
-        VideoPreviewImage(imageURL: exampleImageURL, vieoURL: exampleVideoURL)
+        VideoPreviewImage(imageURL: exampleImageURL, videoURL: exampleVideoURL)
     }
 }

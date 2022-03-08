@@ -40,7 +40,7 @@ struct EpisodesView: View {
                 VStack(alignment: .leading) {
                     // HStack Preview Image
                     HStack {
-                        VideoPreviewImage(imageURL: episode.thumbnailURL, vieoURL: episode.videoURL)
+                        VideoPreviewImage(imageURL: episode.thumbnailURL, videoURL: episode.videoURL)
                             .frame(width: 120, height: 70)
                             .clipped()
                         
