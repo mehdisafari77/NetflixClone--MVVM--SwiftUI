@@ -64,7 +64,6 @@ struct CustomTabSwitcher: View {
     }
 }
 
-// Custom Tabs
 enum CustomTab: String {
     case episodes = "EPISODES"
     case trailers = "TRAILERS & MORE"
