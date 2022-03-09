@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5113EC227D82E9F00E1B271 /* HomeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5113EC127D82E9F00E1B271 /* HomeStack.swift */; };
 		B521F8F427D2F4A700DC44EF /* MoreLikeThis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521F8F327D2F4A700DC44EF /* MoreLikeThis.swift */; };
 		B56D560727D720E200877325 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D560627D720E200877325 /* Trailer.swift */; };
 		B56D560927D7220800877325 /* SwiftUIVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D560827D7220800877325 /* SwiftUIVideoView.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5113EC127D82E9F00E1B271 /* HomeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStack.swift; sourceTree = "<group>"; };
 		B521F8F327D2F4A700DC44EF /* MoreLikeThis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLikeThis.swift; sourceTree = "<group>"; };
 		B56D560627D720E200877325 /* Trailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
 		B56D560827D7220800877325 /* SwiftUIVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIVideoView.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			children = (
 				B586245E27C0883A00FF3B97 /* HomeView.swift */,
 				B5940D7427C08EFF0005787C /* HomeVM.swift */,
+				B5113EC127D82E9F00E1B271 /* HomeStack.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				B5940D6F27C08C9D0005787C /* Movie.swift in Sources */,
 				B586244C27C0868600FF3B97 /* NetflixClone__MVVM__SwiftUIApp.swift in Sources */,
 				B521F8F427D2F4A700DC44EF /* MoreLikeThis.swift in Sources */,
+				B5113EC227D82E9F00E1B271 /* HomeStack.swift in Sources */,
 				B58558EB27CCA241000C3A35 /* CustomTabSwitcher.swift in Sources */,
 				B56D560E27D724D600877325 /* TrailerList.swift in Sources */,
 				B5940D7927C0A46E0005787C /* SmallVerticalButton.swift in Sources */,
