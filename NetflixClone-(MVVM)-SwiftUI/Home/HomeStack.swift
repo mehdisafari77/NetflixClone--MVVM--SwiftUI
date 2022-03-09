@@ -11,9 +11,9 @@ import SwiftUI
 struct HomeStack: View {
     var vm: HomeVM
     
-    @Binding var movieDetailToShow: Movie?
-    
     var topRowSelection: HomeTopRow
+    
+    @Binding var movieDetailToShow: Movie?
     
     var body: some View {
         ForEach(vm.allCategories, id: \.self) { category in
@@ -49,5 +49,11 @@ struct HomeStack: View {
                 }
             }
         }
+    }
+}
+
+struct HomeStack_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeStack(vm: HomeVM(), topRowSelection: .home, movieDetailToShow: .constant(nil))
     }
 }
