@@ -54,6 +54,14 @@ struct HomeStack: View {
 
 struct HomeStack_Previews: PreviewProvider {
     static var previews: some View {
-        HomeStack(vm: HomeVM(), topRowSelection: .home, movieDetailToShow: .constant(nil))
+        ZStack {
+            Color.black
+                .edgesIgnoringSafeArea(.all)
+            
+            ScrollView {
+                HomeStack(vm: HomeVM(), topRowSelection: .home, movieDetailToShow: .constant(nil))
+            }
+        }
+        .foregroundColor(.white)
     }
 }
