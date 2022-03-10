@@ -75,7 +75,49 @@ struct HomeView: View {
                             showTopRowSelection = false
                         } label: {
                             Image(systemName: "xmark.circle.fill")
-                                .font(.system(size: 40))
+                                .font(.system(size: 50))
+                        }
+                        .padding(.bottom, 35)
+
+                    }
+                }
+                .edgesIgnoringSafeArea(.all)
+                .font(.title2)
+            }
+            
+            if showGenreSelection {
+                Group {
+                    Color.black.opacity(0.9)
+                    
+                    VStack(spacing: 40) {
+                        
+                        Spacer()
+                        
+                        ScrollView {
+                            ForEach(vm.allGenre, id: \.self) { genre in
+                                Button {
+                                    homeGenre = genre
+                                    showGenreSelection = false
+                                } label: {
+                                    if genre == homeGenre {
+                                        Text("\(genre.rawValue)")
+                                            .bold()
+                                    } else {
+                                        Text("\(genre.rawValue)")
+                                            .foregroundColor(.gray)
+                                    }
+                                }
+                                .padding(.bottom, 40)
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        Button {
+                            showGenreSelection = false
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(size: 50))
                         }
                         .padding(.bottom, 35)
 

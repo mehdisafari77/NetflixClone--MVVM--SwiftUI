@@ -16,6 +16,8 @@ class HomeVM: ObservableObject {
         movies.keys.map({ String($0) })
     }
     
+    public var allGenre: [HomeGenre] = [.AllGenres, .Action, .Comdey, .Horror]
+    
     public func getMovie(forCat cat: String, andHomeRow homeRow: HomeTopRow) -> [Movie] {
         
         switch homeRow {
