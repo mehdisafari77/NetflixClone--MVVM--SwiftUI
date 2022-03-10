@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B5113EC227D82E9F00E1B271 /* HomeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5113EC127D82E9F00E1B271 /* HomeStack.swift */; };
+		B5113F1427DAC46C00E1B271 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5113F1327DAC46C00E1B271 /* SearchBar.swift */; };
+		B5113F1727DAC63A00E1B271 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5113F1627DAC63A00E1B271 /* Colors.swift */; };
 		B521F8F427D2F4A700DC44EF /* MoreLikeThis.swift in Sources */ = {isa = PBXBuildFile; fileRef = B521F8F327D2F4A700DC44EF /* MoreLikeThis.swift */; };
 		B56D560727D720E200877325 /* Trailer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D560627D720E200877325 /* Trailer.swift */; };
 		B56D560927D7220800877325 /* SwiftUIVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56D560827D7220800877325 /* SwiftUIVideoView.swift */; };
@@ -34,6 +36,8 @@
 
 /* Begin PBXFileReference section */
 		B5113EC127D82E9F00E1B271 /* HomeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStack.swift; sourceTree = "<group>"; };
+		B5113F1327DAC46C00E1B271 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		B5113F1627DAC63A00E1B271 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B521F8F327D2F4A700DC44EF /* MoreLikeThis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreLikeThis.swift; sourceTree = "<group>"; };
 		B56D560627D720E200877325 /* Trailer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trailer.swift; sourceTree = "<group>"; };
 		B56D560827D7220800877325 /* SwiftUIVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIVideoView.swift; sourceTree = "<group>"; };
@@ -70,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5113F1527DAC47000E1B271 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B5113F1327DAC46C00E1B271 /* SearchBar.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		B521F8F027D2F48700DC44EF /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +139,7 @@
 				B5EEB1F127CB3F63005C3E12 /* Helpers */,
 				B521F8F027D2F48700DC44EF /* MovieDetail */,
 				B586244F27C0868700FF3B97 /* Assets.xcassets */,
+				B5113F1527DAC47000E1B271 /* Search */,
 				B586245127C0868700FF3B97 /* Preview Content */,
 			);
 			path = "NetflixClone-(MVVM)-SwiftUI";
@@ -164,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				B5940D7227C08D350005787C /* GlobalHelpers.swift */,
+				B5113F1627DAC63A00E1B271 /* Colors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -256,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B56D561027D7C8EE00877325 /* EpisodesView.swift in Sources */,
+				B5113F1727DAC63A00E1B271 /* Colors.swift in Sources */,
 				B5940D7327C08D350005787C /* GlobalHelpers.swift in Sources */,
 				B56D560727D720E200877325 /* Trailer.swift in Sources */,
 				B5EEB1F627CB4BC4005C3E12 /* Episode.swift in Sources */,
@@ -269,6 +284,7 @@
 				B586244C27C0868600FF3B97 /* NetflixClone__MVVM__SwiftUIApp.swift in Sources */,
 				B521F8F427D2F4A700DC44EF /* MoreLikeThis.swift in Sources */,
 				B5113EC227D82E9F00E1B271 /* HomeStack.swift in Sources */,
+				B5113F1427DAC46C00E1B271 /* SearchBar.swift in Sources */,
 				B58558EB27CCA241000C3A35 /* CustomTabSwitcher.swift in Sources */,
 				B56D560E27D724D600877325 /* TrailerList.swift in Sources */,
 				B5940D7927C0A46E0005787C /* SmallVerticalButton.swift in Sources */,
