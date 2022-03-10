@@ -45,6 +45,23 @@ struct HomeView: View {
                     .animation(.easeIn)
                     .transition(.opacity)
             }
+            if showTopRowSelection {
+                Group {
+                    Color.black.opacity(0.9)
+                    
+                    VStack {
+                        ForEach(HomeTopRow.allCases, id: \.self) { topRow in
+                            Button {
+                                topRowSelection = topRow
+                            } label: {
+                                <#code#>
+                            }
+
+                        }
+                    }
+                }
+                .edgesIgnoringSafeArea(.all)
+            }
         }
         .foregroundColor(.white)
     }
