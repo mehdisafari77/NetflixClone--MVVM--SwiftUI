@@ -49,18 +49,40 @@ struct HomeView: View {
                 Group {
                     Color.black.opacity(0.9)
                     
-                    VStack {
+                    VStack(spacing: 40) {
+                        
+                        Spacer()
+                        
                         ForEach(HomeTopRow.allCases, id: \.self) { topRow in
                             Button {
                                 topRowSelection = topRow
+                                showTopRowSelection = false
                             } label: {
-                                <#code#>
+                                if topRow == topRowSelection {
+                                    Text("\(topRow.rawValue)")
+                                        .bold()
+                                } else {
+                                    Text("\(topRow.rawValue)")
+                                        .foregroundColor(.gray)
+                                }
                             }
 
                         }
+                        
+                        Spacer()
+                        
+                        Button {
+                            showTopRowSelection = false
+                        } label: {
+                            Image(systemName: "xmark.circle.fill")
+                                .font(.system(size: 40))
+                        }
+                        .padding(.bottom, 35)
+
                     }
                 }
                 .edgesIgnoringSafeArea(.all)
+                .font(.title2)
             }
         }
         .foregroundColor(.white)
