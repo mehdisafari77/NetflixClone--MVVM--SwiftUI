@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    init() {
+        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().barTintColor = UIColor.black
+    }
+    
     var body: some View {
-        
+               
         TabView {
             HomeView()
                 .tabItem {
@@ -20,27 +26,28 @@ struct ContentView: View {
             Text("Search")
                 .tabItem {
                     Image(systemName: "magnifyingglass")
-                    Text("Search")
+                    Text("2")
                 }.tag(1)
             
             Text("Coming Soon")
                 .tabItem {
                     Image(systemName: "play.rectangle")
-                    Text("Coming Soon")
+                    Text("2")
                 }.tag(2)
             
             Text("Downloads")
                 .tabItem {
                     Image(systemName: "arrow.down.to.line.alt")
-                    Text("Coming Soon")
+                    Text("2")
                 }.tag(3)
             
             Text("More")
                 .tabItem {
                     Image(systemName: "equal")
-                    Text("Coming Soon")
+                    Text("2")
                 }.tag(4)
         }
+        .accentColor(.white)
     }
 }
 

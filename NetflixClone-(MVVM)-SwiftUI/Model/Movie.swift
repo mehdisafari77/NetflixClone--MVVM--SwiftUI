@@ -1,8 +1,8 @@
 //
 //  Movie.swift
-//  NetflixClone-(MVVM)-SwiftUI
+//  BuildNetflix
 //
-//  Created by Mehdi MMS on 18/02/2022.
+//  Created by Nikita Thomas on 7/6/20.
 //
 
 import Foundation
