@@ -1,8 +1,8 @@
 //
 //  GlobalHelpers.swift
-//  NetflixClone-(MVVM)-SwiftUI
+//  BuildNetflix
 //
-//  Created by Mehdi MMS on 18/02/2022.
+//  Created by Nikita Thomas on 7/6/20.
 //
 
 import Foundation
@@ -70,7 +70,6 @@ let episode6 = Episode(name: "Ghosts",
                          length: 56,
                          videoURL: exampleVideoURL)
 
-// examples
 var allExampleEpisodes = [episode1, episode2, episode3, episode4, episode5, episode6]
 
 let exampleMovie1 = Movie(
