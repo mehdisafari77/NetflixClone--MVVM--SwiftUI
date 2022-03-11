@@ -23,7 +23,7 @@ struct ContentView: View {
                     Text("Home")
                 }.tag(0)
             
-            Text("Search")
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
@@ -32,19 +32,19 @@ struct ContentView: View {
             Text("Coming Soon")
                 .tabItem {
                     Image(systemName: "play.rectangle")
-                    Text("Coming Soon")
+                    Text("2")
                 }.tag(2)
             
             Text("Downloads")
                 .tabItem {
                     Image(systemName: "arrow.down.to.line.alt")
-                    Text("Downloads")
+                    Text("2")
                 }.tag(3)
             
             Text("More")
                 .tabItem {
                     Image(systemName: "equal")
-                    Text("More")
+                    Text("2")
                 }.tag(4)
         }
         .accentColor(.white)

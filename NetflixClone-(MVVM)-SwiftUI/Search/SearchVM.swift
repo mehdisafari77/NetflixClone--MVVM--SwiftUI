@@ -15,7 +15,7 @@ class SearchVM: ObservableObject {
     @Published var viewState: ViewState = ViewState.ready
     
     @Published var popularMovies: [Movie] = []
-    @Published var seachResults: [Movie] = []
+    @Published var searchResults: [Movie] = []
     
     @Published var isShowingPopularMovies = true
     
@@ -25,6 +25,7 @@ class SearchVM: ObservableObject {
     
     public func updateSearchText(with text: String) {
         setViewState(to: .loading)
+        
         
         if text.count > 0 {
             isShowingPopularMovies = false
@@ -38,33 +39,34 @@ class SearchVM: ObservableObject {
         self.popularMovies = generateMovies(40)
     }
     
-
-    
     private func getSearchResults(forText text: String) {
         
         let haveResult = Int.random(in: 0...3)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             if haveResult == 0 {
-                self.seachResults = []
+                // empty view
+                self.searchResults = []
                 self.setViewState(to: .empty)
             } else {
+                // ready view
                 let movies = generateMovies(21)
-                self.seachResults = movies
+                self.searchResults = movies
                 self.setViewState(to: .ready)
             }
         }
+        
     }
     
     private func setViewState(to state: ViewState) {
         DispatchQueue.main.async {
             self.viewState = state
             self.isLoading = state == .loading
-            
         }
     }
     
 }
+
 
 enum ViewState {
     case empty
