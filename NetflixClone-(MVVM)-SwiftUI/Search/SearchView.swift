@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct SearchView: View {
+    
+    @ObservedObject var vm = SearchVM()
+    
+    @State private var searchText = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            Color.black
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                SearchBar(text: $searchText, isLoading: $vm.isLoading)
+                    .padding()
+                
+                Spacer()
+            }
+        }
     }
 }
 
