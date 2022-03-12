@@ -106,4 +106,3 @@ struct PreviewView_Previews: PreviewProvider {
         PreviewView(vm: PreviewVM(movie: exampleMovie1), playVideo: true)
     }
 }
-
