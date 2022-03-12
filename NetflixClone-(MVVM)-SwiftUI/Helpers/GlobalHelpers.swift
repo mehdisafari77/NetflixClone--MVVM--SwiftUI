@@ -80,12 +80,15 @@ let exampleMovie1 = Movie(
     year: 2020,
     rating: "TV-MA",
     numberOfSeasons: 2,
+    accentColor: Color.blue,
     defaultEpisodeInfo: exampleEpisodeInfo1,
     creators: "Baran bo Odan, Jantje Friese",
     cast: "Louis Hofmann, Oliver Masucci, jordis Triebel",
     moreLikeThisMovies: [exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6, exampleMovie7],
     episodes: allExampleEpisodes,
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "darkPreview",
+    previewVideoURL: exampleVideoURL)
 
 let exampleMovie2 = Movie(
     id: UUID().uuidString,
@@ -100,7 +103,10 @@ let exampleMovie2 = Movie(
     cast: "Louis Hofmann, Oliver Masucci, jordis Triebel",
     moreLikeThisMovies: [],
     promotionHeadline: "Best Rated Show",
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "ozarkPreview",
+    previewVideoURL: exampleVideoURL)
+
 let exampleMovie3 = Movie(
     id: UUID().uuidString,
     name: "Community",
@@ -113,7 +119,10 @@ let exampleMovie3 = Movie(
     creators: "Baran bo Odan, Jantje Friese",
     cast: "Louis Hofmann, Oliver Masucci, jordis Triebel",
     moreLikeThisMovies: [],
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "dirtyJohnPreview",
+    previewVideoURL: exampleVideoURL)
+
 let exampleMovie4 = Movie(
     id: UUID().uuidString,
     name: "Alone",
@@ -127,7 +136,10 @@ let exampleMovie4 = Movie(
     cast: "Louis Hofmann, Oliver Masucci, jordis Triebel",
     moreLikeThisMovies: [],
     promotionHeadline: "New episodes coming soon",
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "travelersPreview",
+    previewVideoURL: exampleVideoURL)
+
 let exampleMovie5 = Movie(
     id: UUID().uuidString,
     name: "Hannibal",
@@ -140,7 +152,10 @@ let exampleMovie5 = Movie(
     creators: "Baran bo Odan, Jantje Friese",
     cast: "Louis Hofmann, Oliver Masucci, jordis Triebel",
     moreLikeThisMovies: [],
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "arrestedDevPreview",
+    previewVideoURL: exampleVideoURL)
+
 let exampleMovie6 = Movie(
     id: UUID().uuidString,
     name: "After Life",
@@ -154,7 +169,9 @@ let exampleMovie6 = Movie(
     cast: "Louis Hofmann, Oliver Masucci, jordis Triebel",
     moreLikeThisMovies: [],
     promotionHeadline: "Watch Season 6 Now",
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "whiteLinesPreview",
+    previewVideoURL: exampleVideoURL)
 
 let exampleMovie7 = Movie(
     id: UUID().uuidString,
@@ -169,10 +186,12 @@ let exampleMovie7 = Movie(
     cast: "Louis Hofmann, Oliver Masucci, jordis Triebel",
     moreLikeThisMovies: [],
     promotionHeadline: "Watch Season 6 Now",
-    trailers: exampleTrailers)
+    trailers: exampleTrailers,
+    previewImageName: "ozarkPreview",
+    previewVideoURL: exampleVideoURL)
 
 var exampleMovies: [Movie] {
-    return [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6].shuffled()
+    return [exampleMovie1, exampleMovie2, exampleMovie3, exampleMovie4, exampleMovie5, exampleMovie6]
 }
 
 
@@ -199,5 +218,36 @@ extension String {
 extension View {
     func hideKeyboard() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
+
+extension View {
+    
+    /// Hide or show the view based on a boolean value.
+    ///
+    /// Example for visibility:
+    /// ```
+    /// Text("Label")
+    ///     .isHidden(true)
+    /// ```
+    ///
+    /// Example for complete removal:
+    /// ```
+    /// Text("Label")
+    ///     .isHidden(true, remove: true)
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - hidden: Set to `false` to show the view. Set to `true` to hide the view.
+    ///   - remove: Boolean value indicating whether or not to remove the view.
+    @ViewBuilder func isHidden(_ hidden: Bool, remove: Bool = false) -> some View {
+        if hidden {
+            if !remove {
+                self.hidden()
+            }
+        } else {
+            self
+        }
     }
 }
