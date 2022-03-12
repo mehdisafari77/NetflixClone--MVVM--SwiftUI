@@ -1,5 +1,5 @@
 //
-//  MoviewPreviewCell.swift
+//  MoviePreviewCell.swift
 //  NetflixClone-(MVVM)-SwiftUI
 //
 //  Created by Mehdi MMS on 11/03/2022.
