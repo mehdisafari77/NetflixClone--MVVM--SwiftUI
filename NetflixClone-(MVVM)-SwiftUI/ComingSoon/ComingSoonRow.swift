@@ -75,6 +75,7 @@ struct ComingSoonRow: View {
     }
 }
 
+//
 struct ComingSoonRow_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
